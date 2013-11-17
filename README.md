@@ -10,7 +10,7 @@ raised the next time a search is attempted. Four or less articles runs fine.
 
 
 ## Recreate
-Turn off rspec's `fail-fast` if you have it turned on, so you can see
+Turn off rspec's `--fail-fast` if you have it turned on, so you can see
 that the only spec failing is the one where the same search options are used.
 
 From the app root, run:
