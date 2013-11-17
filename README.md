@@ -2,7 +2,11 @@ This is a test app to show a bug.
 
 ## Explanation
 When creating and indexing more than four records, a `StaleIdsException` is
-raised the next time a search is attempted. Four or less articles runs fine.
+raised the next time a search is attempted with the same options. When certain
+options are changed (page, limit, query), the next search does not raise the
+error. `order` still causes the error to be raised.
+
+Creating/indexing four or less articles doesn't exhibit this behavior.
 
 * Rails 3.2, 4.0
 * Sphinx 2.1.2-release
@@ -10,8 +14,8 @@ raised the next time a search is attempted. Four or less articles runs fine.
 
 
 ## Recreate
-Turn off rspec's `--fail-fast` if you have it turned on, so you can see
-that the only spec failing is the one where the same search options are used.
+Turn off rspec's `--fail-fast` if you have it turned on, so you can see all
+of the failures and successes at once. Also turn on `--format nested`.
 
 From the app root, run:
 
@@ -20,5 +24,5 @@ From the app root, run:
 bundle exec rspec
 ```
 
-By default, this will fail with a `StaleIdsException`.
-To make it pass, change `NUM_ARTICLES` in `spec/article_spec.rb` to 4 or less.
+A few of these will fail with a `StaleIdsException`. My goal is to make them
+all pass.
