@@ -4,7 +4,7 @@ This is a test app to show a bug.
 When creating and indexing more than four records, a `StaleIdsException` is
 raised the next time a search is attempted with the same options. When certain
 options are changed (page, limit, query), the next search does not raise the
-error. `order` still causes the error to be raised.
+error. Only changing `order` still causes the error to be raised.
 
 Creating/indexing four or less articles doesn't exhibit this behavior.
 
