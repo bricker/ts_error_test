@@ -1,0 +1,3 @@
+bundle install
+bundle exec rake RAILS_ENV=test db:setup
+bundle exec rake RAILS_ENV=test db:test:prepare
