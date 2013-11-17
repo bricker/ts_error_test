@@ -104,4 +104,4 @@ DEPENDENCIES
   mysql2
   rails (= 4.0.1)
   rspec-rails
-  thinking-sphinx
+  thinking-sphinx (~> 3.0.6)
